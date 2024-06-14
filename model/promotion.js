@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes)=>{
-    const Inscription = sequelize.define("inscription",{
-        annee: {
+    const Promotion = sequelize.define("promotion",{
+        designation: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -9,5 +9,5 @@ module.exports = (sequelize, DataTypes)=>{
         },
     })
 
-    return Inscription
+    return Promotion
 }

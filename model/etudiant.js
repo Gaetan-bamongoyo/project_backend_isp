@@ -1,11 +1,11 @@
 module.exports = (sequelize, DataTypes)=>{
     const Etudiant = sequelize.define("etudiant",{
         matricule: {
-            type: DataTypes.STRING,
-            allowNull: false
+            type: DataTypes.STRING
         },
         identite: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: false
         },
         sexe: {
             type: DataTypes.STRING

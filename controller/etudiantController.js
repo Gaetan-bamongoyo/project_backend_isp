@@ -3,6 +3,7 @@ const db = require('../sequelize/connector')
 const Etudiant = db.etudiant
 const Inscription = db.inscription
 const Filiere = db.filiere
+const Promotion = db.promotion
 const True = true
 const False = false
 
@@ -58,6 +59,9 @@ const getEtudiantInscription = async (req, res)=>{
             include: [{
                 model: Filiere,
                 as: 'filiere'
+            }, {
+                model: Promotion,
+                as: 'aspromotion'
             }]
         }]
     })

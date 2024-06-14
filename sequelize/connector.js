@@ -27,6 +27,7 @@ db.sequelize = sequelize
 db.etudiant = require('../model/etudiant.js')(sequelize, DataTypes)
 db.inscription = require('../model/inscription.js')(sequelize, DataTypes)
 db.filiere = require('../model/filiere.js')(sequelize, DataTypes)
+db.promotion = require('../model/promotion.js')(sequelize, DataTypes)
 
 db.sequelize.sync({ force: false })
 .then(()=>{
@@ -48,6 +49,14 @@ db.filiere.hasMany(db.inscription, {
 db.inscription.belongsTo(db.filiere, {
     foreignKey: 'filiere_id',
     as: 'filiere'
+})
+db.promotion.hasMany(db.inscription, {
+    foreignKey: 'promotion_id',
+    as: 'promotion'
+})
+db.inscription.belongsTo(db.promotion, {
+    foreignKey: 'promotion_id',
+    as: 'aspromotion'
 })
 
 module.exports = db
