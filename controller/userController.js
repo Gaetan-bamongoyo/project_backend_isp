@@ -5,14 +5,19 @@ const User = db.user
 
 // create
 const addUser = async (req, res)=>{
+    const { username } = req.body;
+    const check = await User.findOne({where: {username}});
     let info = {
         username: req.body.username,
         password: req.body.password,
         filiere: req.body.filiere,
     }
-
-    const user = await User.create(info)
-    res.status(200).send(user)
+    if(check){
+        res.status(401).send([])
+    }else{
+        const user = await User.create(info)
+        res.status(200).send(user)
+    }
 }
 
 const verifyUser = async (req, res)=>{
