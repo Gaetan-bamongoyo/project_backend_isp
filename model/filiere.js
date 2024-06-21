@@ -1,15 +1,13 @@
 module.exports = (sequelize, DataTypes)=>{
     const Filiere = sequelize.define("filiere",{
-        designation: {
-            type: DataTypes.STRING,
-            allowNull: false
+        designationfiliere: {
+            type: DataTypes.STRING
+        },
+        initiale:{
+            type: DataTypes.STRING
         },
         section: {
             type: DataTypes.STRING,
-            allowNull: false
-        },
-        statut: {
-            type: DataTypes.BOOLEAN
         },
     })
 

@@ -8,9 +8,9 @@ const False = false
 // create
 const addFiliere = async (req, res)=>{
     let info = {
-        designation: req.body.designation,
+        designationfiliere: req.body.designationfiliere,
         section: req.body.section,
-        statut: req.body.statut ? req.body.statut : true,
+        initiale: req.body.initiale,
     }
 
     const filiere = await Filiere.create(info)
@@ -26,7 +26,6 @@ const getData = async (req, res)=>{
 const addPromotion = async (req, res)=>{
     let info = {
         designation: req.body.designation,
-        statut: req.body.statut ? req.body.statut : true,
     }
 
     const promotion = await Promotion.create(info)

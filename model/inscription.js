@@ -4,9 +4,6 @@ module.exports = (sequelize, DataTypes)=>{
             type: DataTypes.STRING,
             allowNull: false
         },
-        statut: {
-            type: DataTypes.BOOLEAN
-        },
     })
 
     return Inscription

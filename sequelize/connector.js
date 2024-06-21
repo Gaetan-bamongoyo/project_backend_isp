@@ -28,6 +28,7 @@ db.etudiant = require('../model/etudiant.js')(sequelize, DataTypes)
 db.inscription = require('../model/inscription.js')(sequelize, DataTypes)
 db.filiere = require('../model/filiere.js')(sequelize, DataTypes)
 db.promotion = require('../model/promotion.js')(sequelize, DataTypes)
+db.user = require('../model/user.js')(sequelize, DataTypes)
 
 db.sequelize.sync({ force: false })
 .then(()=>{

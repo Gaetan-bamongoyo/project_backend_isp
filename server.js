@@ -18,9 +18,11 @@ app.use(express.urlencoded({ extended: true }))
 const routeretudiant  = require('./routes/routeEtudiant')
 const routerinscription = require('./routes/routeInscription')
 const routerfilierepromotion = require('./routes/routeFilierePromotion')
+const routerUser = require('./routes/user')
 app.use('/isp/etudiant', routeretudiant)
 app.use('/isp/operation', routerinscription)
 app.use('/isp/filierepromotion', routerfilierepromotion)
+app.use('/user', routerUser)
 
 // test api
 app.get('/', (req, res)=>{

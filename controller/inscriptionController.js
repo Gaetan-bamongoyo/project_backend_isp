@@ -8,7 +8,6 @@ const False = false
 const addInscription = async (req, res)=>{
     let info = {
         annee: req.body.annee,
-        statut: req.body.statut,
         etudiant_id: req.body.etudiant_id,
         filiere_id: req.body.filiere_id,
         promotion_id: req.body.promotion_id
@@ -19,7 +18,12 @@ const addInscription = async (req, res)=>{
 }
 
 // getall
+const getAllInscription = async (req, res)=> {
+    let inscription = await Inscription.findAll({})
+    res.status(200).send(inscription)
+}
 
 module.exports = {
-    addInscription
+    addInscription,
+    getAllInscription
 }
